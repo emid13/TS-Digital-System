@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ATSC PRO v3.2 - Detail Arsip Pertandingan</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/arsip-detail.css">
+
+</head>
+
+<body>
+
+<div class="detail-container">
+
+    <!-- ================= HEADER ================= -->
+
+    <div class="detail-header">
+
+        <h1>DETAIL PERTANDINGAN</h1>
+
+        <div id="namaKejuaraan" class="judul-kejuaraan">
+            -
+        </div>
+
+        <div id="infoKejuaraan" class="info-kejuaraan">
+            -
+        </div>
+
+    </div>
+
+    <!-- ================= INFORMASI PARTAI ================= -->
+
+    <div class="card">
+
+        <h2>INFORMASI PERTANDINGAN</h2>
+
+        <div class="grid-2">
+
+            <div>
+
+                <p>Nomor Partai</p>
+
+                <b id="nomorPartai">-</b>
+
+            </div>
+
+            <div>
+
+                <p>Kelas</p>
+
+                <b id="kelasPartai">-</b>
+
+            </div>
+
+            <div>
+
+                <p>Gelanggang</p>
+
+                <b id="gelanggang">-</b>
+
+            </div>
+
+            <div>
+
+                <p>Tanggal</p>
+
+                <b id="tanggal">-</b>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ================= PESILAT ================= -->
+
+    <div class="pesilat-area">
+
+        <div class="pesilat kuning">
+
+            <h2>SUDUT KUNING</h2>
+
+            <h3 id="namaKuning">-</h3>
+
+            <p id="kontingenKuning">-</p>
+
+        </div>
+
+        <div class="vs">
+
+            VS
+
+        </div>
+
+        <div class="pesilat biru">
+
+            <h2>SUDUT BIRU</h2>
+
+            <h3 id="namaBiru">-</h3>
+
+            <p id="kontingenBiru">-</p>
+
+        </div>
+
+    </div>
+
+    <!-- ================= HASIL RONDE ================= -->
+
+    <div class="card">
+
+        <h2>HASIL RONDE</h2>
+
+        <table>
+
+            <thead>
+
+            <tr>
+
+                <th>Ronde</th>
+
+                <th>Kuning</th>
+
+                <th>Biru</th>
+
+                <th>Pemenang</th>
+
+            </tr>
+
+            </thead>
+
+            <tbody>
+
+            <tr>
+
+                <td>1</td>
+
+                <td id="r1Kuning">0</td>
+
+                <td id="r1Biru">0</td>
+
+                <td id="r1Winner">-</td>
+
+            </tr>
+
+            <tr>
+
+                <td>2</td>
+
+                <td id="r2Kuning">0</td>
+
+                <td id="r2Biru">0</td>
+
+                <td id="r2Winner">-</td>
+
+            </tr>
+
+            <tr>
+
+                <td>Tambahan</td>
+
+                <td id="rtKuning">0</td>
+
+                <td id="rtBiru">0</td>
+
+                <td id="rtWinner">-</td>
+
+            </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <!-- ================= PEMBANTU WASIT ================= -->
+
+    <div class="card">
+
+        <h2>STATISTIK PEMBANTU WASIT</h2>
+
+        <table>
+
+            <thead>
+
+            <tr>
+
+                <th></th>
+
+                <th>PW1</th>
+
+                <th>PW2</th>
+
+                <th>PW3</th>
+
+                <th>PW4</th>
+
+            </tr>
+
+            </thead>
+
+            <tbody>
+
+            <tr>
+
+                <td>Kuning</td>
+
+                <td id="pw1Kuning">0</td>
+
+                <td id="pw2Kuning">0</td>
+
+                <td id="pw3Kuning">0</td>
+
+                <td id="pw4Kuning">0</td>
+
+            </tr>
+
+            <tr>
+
+                <td>Biru</td>
+
+                <td id="pw1Biru">0</td>
+
+                <td id="pw2Biru">0</td>
+
+                <td id="pw3Biru">0</td>
+
+                <td id="pw4Biru">0</td>
+
+            </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <!-- ================= HUKUMAN ================= -->
+
+    <div class="card">
+
+        <h2>HUKUMAN</h2>
+
+        <div class="grid-2">
+
+            <div>
+
+                <p>Sudut Kuning</p>
+
+                <h2 id="hukumanKuning">0</h2>
+
+            </div>
+
+            <div>
+
+                <p>Sudut Biru</p>
+
+                <h2 id="hukumanBiru">0</h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ================= HASIL AKHIR ================= -->
+
+    <div class="card hasil">
+
+        <h2>HASIL AKHIR</h2>
+
+        <h1 id="pemenang">-</h1>
+
+        <h3 id="metodeMenang">-</h3>
+
+    </div>
+
+    <!-- ================= TOMBOL ================= -->
+
+<div class="ttd">
+
+    <div class="ttd-box">
+
+        Ketua Pertandingan
+
+        <div class="ttd-garis">
+
+            (........................)
+
+        </div>
+
+    </div>
+
+    <div class="ttd-box">
+
+        Sekretaris
+
+        <div class="ttd-garis">
+
+            (........................)
+
+        </div>
+
+    </div>
+
+</div>
+  
+    <div class="button-area">
+
+        <button class="btn-kembali"
+                onclick="history.back()">
+
+            ← Kembali
+
+<div id="laporanPDF">
+
+    <!-- seluruh isi pertandingan -->
+
+</div>
+          
+        </button>
+
+        <button class="btn-pdf"
+                onclick="cetakPDF()">
+
+            🖨 Cetak PDF
+
+        </button>
+
+    </div>
+
+</div>
+
+<script src="js/database.js"></script>
+<script src="js/arsip-detail.js"></script>
+
+</body>
+
+</html>

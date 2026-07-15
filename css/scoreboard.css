@@ -1,0 +1,867 @@
+ /*====================================================
+ATSC PRO v3.1 FINAL
+SCOREBOARD.CSS
+BAGIAN 1
+RESET + LAYOUT + HEADER
+====================================================*/
+
+/* ================= RESET ================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+
+    font-family:Arial,Helvetica,sans-serif;
+
+    background:#111;
+
+    color:#fff;
+
+}
+
+/* ================= PAGE ================= */
+
+.scoreboard{
+
+    width:100vw;
+
+    height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    background:#111;
+
+}
+
+/* ================= HEADER ================= */
+
+.header-scoreboard{
+
+    width:100%;
+
+    height:110px;
+
+    background:#1b1b1b;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:15px 25px;
+
+    border-bottom:4px solid #444;
+
+}
+
+/* ================= HEADER LEFT ================= */
+
+.header-left{
+
+    width:120px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.logo-header{
+
+    width:60px;
+
+    height:60px;
+
+    object-fit:contain;
+
+}
+
+/* ================= HEADER CENTER ================= */
+
+.header-center{
+
+    flex:1;
+
+    text-align:center;
+
+}
+
+.nama-kejuaraan{
+
+    font-size:34px;
+
+    font-weight:bold;
+
+    color:#ffd400;
+
+    letter-spacing:1px;
+
+}
+
+.tempat-kejuaraan{
+
+    margin-top:8px;
+
+    font-size:18px;
+
+    color:#ddd;
+
+}
+
+/* ================= HEADER RIGHT ================= */
+
+.header-right{
+
+    width:220px;
+
+    text-align:center;
+
+}
+
+.ronde{
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    color:#00e5ff;
+
+}
+
+.timer{
+
+    margin-top:5px;
+
+    font-size:50px;
+
+    font-weight:bold;
+
+    color:#00ff55;
+
+    letter-spacing:2px;
+
+}
+
+.status{
+
+    margin-top:8px;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    color:#ffffff;
+
+}
+
+/* ================= BAR PARTAI ================= */
+
+.partai-bar{
+
+    height:55px;
+
+    background:#292929;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 30px;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    border-bottom:3px solid #444;
+
+}
+
+#nomorPartai{
+
+    color:#ffd400;
+
+    margin-left:10px;
+
+}
+
+#gelanggang{
+
+    color:#00e5ff;
+
+}
+
+/*====================================================
+ATSC PRO v3.1 FINAL
+SCOREBOARD.CSS
+BAGIAN 2
+AREA SCORE
+====================================================*/
+
+/* ================= AREA SCORE ================= */
+
+.score-area{
+
+    flex:1;
+
+    display:grid;
+
+    grid-template-columns:1fr 180px 1fr;
+
+    align-items:center;
+
+    gap:20px;
+
+    padding:25px;
+
+}
+
+/* ================= PANEL PESILAT ================= */
+
+.corner{
+
+    height:100%;
+
+    border-radius:15px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:25px;
+
+    transition:.35s;
+
+    border:5px solid #444;
+
+}
+
+/* ================= PANEL KUNING ================= */
+
+.kuning{
+
+    background:#FFD400;
+
+    color:#111;
+
+}
+
+/* ================= PANEL BIRU ================= */
+
+.biru{
+
+    background:#1565C0;
+
+    color:#fff;
+
+}
+
+/* ================= PANEL AKTIF ================= */
+
+.panel-active{
+
+    transform:scale(1.02);
+
+    box-shadow:0 0 30px rgba(255,255,255,.35);
+
+}
+
+/* ================= PANEL KALAH ================= */
+
+.panel-black{
+
+    background:#111 !important;
+
+    color:#fff !important;
+
+    border-color:#333;
+
+}
+
+/* ================= MENANG MUTLAK ================= */
+
+.panel-mutlak{
+
+    background:#D50000 !important;
+
+    color:#fff !important;
+
+    animation:mutlakBlink .8s infinite;
+
+}
+
+/* ================= NAMA PESILAT ================= */
+
+.nama{
+
+    width:100%;
+
+    text-align:center;
+
+}
+
+.nama div:first-child{
+
+    font-size:38px;
+
+    font-weight:bold;
+
+    text-transform:uppercase;
+
+}
+
+.nama div:last-child{
+
+    margin-top:10px;
+
+    font-size:24px;
+
+}
+
+/* ================= NILAI ================= */
+
+.score{
+
+    font-size:150px;
+
+    font-weight:bold;
+
+    line-height:1;
+
+    text-align:center;
+
+}
+
+/* ================= VS ================= */
+
+.vs{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:70px;
+
+    font-weight:bold;
+
+    color:#fff;
+
+}
+
+/* ================= ANIMASI ================= */
+
+@keyframes mutlakBlink{
+
+    0%{
+
+        opacity:1;
+
+    }
+
+    50%{
+
+        opacity:.4;
+
+    }
+
+    100%{
+
+        opacity:1;
+
+    }
+
+}
+
+/*====================================================
+ATSC PRO v3.1 FINAL
+SCOREBOARD.CSS
+BAGIAN 3
+PEMBANTU WASIT + FOOTER
+====================================================*/
+
+/* ================= AREA PW ================= */
+
+.pw-area{
+
+    width:100%;
+
+    padding:15px 20px;
+
+    background:#202020;
+
+    border-top:4px solid #444;
+
+}
+
+/* ================= TABEL PW ================= */
+
+.pw-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    table-layout:fixed;
+
+}
+
+/* ================= HEADER ================= */
+
+.pw-table thead tr{
+
+    background:#303030;
+
+}
+
+.pw-table th{
+
+    border:2px solid #555;
+
+    padding:12px;
+
+    font-size:22px;
+
+    color:#FFD400;
+
+    font-weight:bold;
+
+}
+
+/* ================= BODY ================= */
+
+.pw-table td{
+
+    border:2px solid #555;
+
+    text-align:center;
+
+    padding:15px;
+
+    font-size:34px;
+
+    font-weight:bold;
+
+    background:#111;
+
+    color:#fff;
+
+}
+
+/* ================= LABEL ================= */
+
+.label-kuning{
+
+    background:#FFD400 !important;
+
+    color:#111 !important;
+
+    font-size:24px !important;
+
+}
+
+.label-biru{
+
+    background:#1565C0 !important;
+
+    color:#fff !important;
+
+    font-size:24px !important;
+
+}
+
+/* ================= NILAI PW ================= */
+
+#pw1Kuning,
+#pw2Kuning,
+#pw3Kuning,
+#pw4Kuning{
+
+    color:#FFD400;
+
+}
+
+#pw1Biru,
+#pw2Biru,
+#pw3Biru,
+#pw4Biru{
+
+    color:#4FC3F7;
+
+}
+
+/* ================= FOOTER ================= */
+
+.footer-scoreboard{
+
+    width:100%;
+
+    height:70px;
+
+    background:#111;
+
+    border-top:3px solid #444;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:0 20px;
+
+}
+
+/* ================= INFO ================= */
+
+#winnerText{
+
+    font-size:28px;
+
+    font-weight:bold;
+
+    color:#ffffff;
+
+    text-align:center;
+
+}
+
+/* ================= STATUS BERJALAN ================= */
+
+.status-jalan{
+
+    color:#00ff66;
+
+}
+
+.status-pause{
+
+    color:#ff9800;
+
+}
+
+.status-stop{
+
+    color:#ff4444;
+
+}
+
+/*====================================================
+ATSC PRO v3.1 FINAL
+SCOREBOARD.CSS
+BAGIAN 4
+OVERLAY + ANIMASI + RESPONSIVE
+====================================================*/
+
+/* ================= OVERLAY ================= */
+
+.winner-overlay,
+.mutlak-overlay{
+
+    position:fixed;
+
+    left:0;
+    top:0;
+
+    width:100%;
+    height:100%;
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    background:rgba(0,0,0,.75);
+
+    z-index:9999;
+
+}
+
+/* ================= BOX ================= */
+
+.winner-box,
+.mutlak-box{
+
+    width:700px;
+
+    max-width:90%;
+
+    background:#1b1b1b;
+
+    border:6px solid #FFD400;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    padding:40px;
+
+    animation:popupScale .35s ease;
+
+}
+
+/* ================= TITLE ================= */
+
+.winner-title,
+.mutlak-title{
+
+    font-size:48px;
+
+    font-weight:bold;
+
+    color:#FFD400;
+
+    margin-bottom:20px;
+
+}
+
+/* ================= NAMA ================= */
+
+.winner-name,
+.mutlak-nama{
+
+    font-size:70px;
+
+    font-weight:bold;
+
+    margin-bottom:25px;
+
+}
+
+/* ================= SKOR ================= */
+
+.winner-score,
+.mutlak-skor{
+
+    font-size:60px;
+
+    font-weight:bold;
+
+    color:#ffffff;
+
+}
+
+/* ================= PANEL INFO ================= */
+
+.winner-panel{
+
+    margin-top:10px;
+
+    background:#202020;
+
+    border:2px solid #555;
+
+    border-radius:12px;
+
+    padding:15px;
+
+}
+
+#winnerTitle{
+
+    font-size:28px;
+
+    color:#FFD400;
+
+    margin-bottom:8px;
+
+}
+
+#winnerStat{
+
+    font-size:18px;
+
+    color:#ffffff;
+
+    line-height:1.6;
+
+}
+
+/* ================= ANIMASI ================= */
+
+@keyframes popupScale{
+
+    0%{
+
+        transform:scale(.5);
+
+        opacity:0;
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+@keyframes blinkWinner{
+
+    0%{
+
+        opacity:1;
+
+    }
+
+    50%{
+
+        opacity:.35;
+
+    }
+
+    100%{
+
+        opacity:1;
+
+    }
+
+}
+
+@keyframes mutlakFlash{
+
+    0%{
+
+        background:#d50000;
+
+    }
+
+    50%{
+
+        background:#ffeb3b;
+
+        color:#111;
+
+    }
+
+    100%{
+
+        background:#d50000;
+
+    }
+
+}
+
+/* ================= CLASS ANIMASI ================= */
+
+.flashWinner{
+
+    animation:blinkWinner .8s infinite;
+
+}
+
+.flashMutlak{
+
+    animation:mutlakFlash .5s infinite;
+
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media screen and (max-width:1200px){
+
+    .header-scoreboard{
+
+        height:90px;
+
+    }
+
+    .nama-kejuaraan{
+
+        font-size:28px;
+
+    }
+
+    .timer{
+
+        font-size:42px;
+
+    }
+
+    .score{
+
+        font-size:110px;
+
+    }
+
+    .nama div:first-child{
+
+        font-size:28px;
+
+    }
+
+    .nama div:last-child{
+
+        font-size:18px;
+
+    }
+
+    .pw-table td{
+
+        font-size:24px;
+
+    }
+
+}
+
+@media screen and (max-width:900px){
+
+    .score-area{
+
+        grid-template-columns:1fr;
+
+        gap:15px;
+
+    }
+
+    .vs{
+
+        font-size:40px;
+
+    }
+
+    .score{
+
+        font-size:80px;
+
+    }
+
+    .pw-table th{
+
+        font-size:16px;
+
+    }
+
+    .pw-table td{
+
+        font-size:18px;
+
+    }
+
+}
+
+/* ================= SELESAI ================= */

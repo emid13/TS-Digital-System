@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>ATSC PRO v3.2 - Arsip Pertandingan</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/arsip.css">
+
+</head>
+
+<body>
+
+<div class="arsip-container">
+
+    <header class="arsip-header">
+
+        <h1>ARSIP PERTANDINGAN</h1>
+
+        <div id="namaKejuaraan"></div>
+
+        <div id="infoKejuaraan"></div>
+
+    </header>
+
+    <div class="arsip-toolbar">
+
+        <input
+            id="cari"
+            type="text"
+            placeholder="Cari Nama / Kontingen / Partai">
+
+        <select id="filterKelas">
+
+            <option value="">Semua Kelas</option>
+
+        </select>
+
+        <select id="filterGelanggang">
+
+            <option value="">Semua Gelanggang</option>
+
+        </select>
+
+        <button onclick="refreshArsip()">
+
+            Refresh
+
+        </button>
+
+    </div>
+
+    <table class="arsip-table">
+
+        <thead>
+
+        <tr>
+
+            <th>No</th>
+
+            <th>Partai</th>
+
+            <th>Kelas</th>
+
+            <th>Kuning</th>
+
+            <th>Biru</th>
+
+            <th>Pemenang</th>
+
+            <th>Metode</th>
+
+            <th>Tanggal</th>
+
+            <th>Aksi</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody id="arsipBody">
+
+        </tbody>
+
+    </table>
+
+</div>
+
+<script src="js/database.js"></script>
+<script src="js/arsip.js"></script>
+
+</body>
+
+</html>

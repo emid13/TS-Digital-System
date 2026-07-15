@@ -1,0 +1,1719 @@
+/* ===========================================
+   ATSC PRO v3.1
+   KP PROFESSIONAL
+=========================================== */
+
+body.kp-page{
+
+    margin:0;
+
+    padding:0;
+
+    background:#101010;
+
+    color:#fff;
+
+    font-family:Arial,Helvetica,sans-serif;
+
+    overflow-y:auto;
+
+    overflow-x:hidden;
+
+}
+
+.kp-container{
+
+    width:100%;
+
+    min-height:100vh;
+
+    padding:12px;
+
+    box-sizing:border-box;
+
+}
+
+/*==========================
+HEADER
+==========================*/
+
+.kp-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:#1d1d1d;
+
+    border-radius:12px;
+
+    padding:12px;
+
+    margin-bottom:12px;
+
+}
+
+.event-info h1{
+
+    margin:0;
+
+    color:#ffd700;
+
+    font-size:28px;
+
+}
+
+.event-detail{
+
+    margin-top:6px;
+
+    display:flex;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+    font-size:15px;
+
+}
+
+.status-box{
+
+    text-align:center;
+
+    background:#8b0000;
+
+    padding:12px;
+
+    border-radius:12px;
+
+    min-width:110px;
+
+}
+
+.status-box #ronde{
+
+    font-size:42px;
+
+    font-weight:bold;
+
+}
+
+/*==========================
+ARENA PERTANDINGAN
+==========================*/
+
+.arena{
+
+    display:grid;
+
+    grid-template-columns:1fr 240px 1fr;
+
+    gap:12px;
+
+    align-items:stretch;
+
+    margin-bottom:15px;
+
+}
+
+.corner{
+
+    border-radius:14px;
+
+    padding:18px;
+
+    text-align:center;
+
+    color:#fff;
+
+    box-shadow:0 3px 10px rgba(0,0,0,.4);
+
+}
+
+.corner h2{
+
+    margin:0;
+
+    font-size:24px;
+
+    font-weight:bold;
+
+}
+
+.corner p{
+
+    margin:10px 0;
+
+    font-size:18px;
+
+    opacity:.9;
+
+}
+
+.kuning{
+
+    background:linear-gradient(180deg,#ffd400,#c58b00);
+
+}
+
+.biru{
+
+    background:linear-gradient(180deg,#1976d2,#0d47a1);
+
+}
+
+.score{
+
+    font-size:72px;
+
+    font-weight:bold;
+
+    margin-top:20px;
+
+}
+
+/*==========================
+TIMER
+==========================*/
+
+.timer-box{
+
+    background:#111;
+
+    border:4px solid #ffd700;
+
+    border-radius:16px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-height:220px;
+
+    box-shadow:0 0 20px rgba(255,215,0,.35);
+
+}
+
+#timer{
+
+    font-size:64px;
+
+    font-weight:bold;
+
+    color:#00ff66;
+
+    letter-spacing:3px;
+
+}
+
+/*==========================
+RESPONSIVE HP
+==========================*/
+
+@media(max-width:900px){
+
+    .arena{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .timer-box{
+
+        order:-1;
+
+        min-height:140px;
+
+    }
+
+    #timer{
+
+        font-size:54px;
+
+    }
+
+    .score{
+
+        font-size:60px;
+
+    }
+
+}
+
+/* ===========================================
+   ATSC PRO KP CSS V2
+   RESPONSIVE PROFESSIONAL
+=========================================== */
+
+/* ------------------------------
+HP PORTRAIT
+------------------------------ */
+
+@media screen and (orientation:portrait){
+
+    .kp-container{
+
+        padding:10px;
+
+    }
+
+    .arena{
+
+        display:flex;
+
+        flex-direction:column;
+
+    }
+
+    .timer-box{
+
+        order:-1;
+
+        width:100%;
+
+        min-height:160px;
+
+        margin-bottom:12px;
+
+    }
+
+    #timer{
+
+        font-size:70px;
+
+    }
+
+    .corner{
+
+        width:100%;
+
+    }
+
+    .score{
+
+        font-size:64px;
+
+    }
+
+}
+
+/* ------------------------------
+HP LANDSCAPE
+------------------------------ */
+
+@media screen and (orientation:landscape){
+
+    .kp-container{
+
+        max-width:100%;
+
+        padding:10px;
+
+    }
+
+    .arena{
+
+        display:grid;
+
+        grid-template-columns:1fr 320px 1fr;
+
+        gap:12px;
+
+        align-items:stretch;
+
+    }
+
+    .timer-box{
+
+        min-height:240px;
+
+    }
+
+    #timer{
+
+        font-size:82px;
+
+    }
+
+    .score{
+
+        font-size:80px;
+
+    }
+
+}
+
+/* ------------------------------
+TABLET
+------------------------------ */
+
+@media screen and (min-width:768px){
+
+    .kp-container{
+
+        max-width:1300px;
+
+        margin:auto;
+
+    }
+
+}
+
+/* ------------------------------
+LAPTOP / PC / TV
+------------------------------ */
+
+@media screen and (min-width:1200px){
+
+    .kp-container{
+
+        max-width:1700px;
+
+    }
+
+    #timer{
+
+        font-size:110px;
+
+    }
+
+    .score{
+
+        font-size:110px;
+
+    }
+
+}
+
+/* ===========================================
+   KP.CSS V2 BAGIAN 4
+   PANEL KONTROL & KEPUTUSAN
+===========================================*/
+
+/* ==========================
+   PANEL KONTROL
+========================== */
+
+.kp-control{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+
+    gap:12px;
+
+    margin:18px 0;
+
+}
+
+.kp-control button{
+
+    border:none;
+
+    border-radius:14px;
+
+    padding:18px;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    color:#fff;
+
+    transition:.25s;
+
+    box-shadow:0 4px 10px rgba(0,0,0,.35);
+
+}
+
+.kp-control button:hover{
+
+    transform:scale(1.03);
+
+}
+
+.kp-control button:nth-child(1){
+
+    background:#16a34a;
+
+}
+
+.kp-control button:nth-child(2){
+
+    background:#d97706;
+
+}
+
+.kp-control button:nth-child(3){
+
+    background:#dc2626;
+
+}
+
+.kp-control button:nth-child(4){
+
+    background:#2563eb;
+
+}
+
+.kp-control button:nth-child(5){
+
+    background:#7c3aed;
+
+}
+
+/* ==========================
+   PANEL KEPUTUSAN
+========================== */
+
+.kp-keputusan{
+
+    margin-top:20px;
+
+    background:#181818;
+
+    border-radius:16px;
+
+    padding:18px;
+
+}
+
+.kp-keputusan h2{
+
+    text-align:center;
+
+    color:#ffd700;
+
+    margin-bottom:15px;
+
+}
+
+.keputusan-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:12px;
+
+}
+
+.keputusan-grid button{
+
+    border:none;
+
+    border-radius:14px;
+
+    padding:16px;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    color:#fff;
+
+    cursor:pointer;
+
+}
+
+/* WARNA */
+
+.btn-kuning{
+
+    background:#d4a300;
+
+}
+
+.btn-biru{
+
+    background:#1565c0;
+
+}
+
+.btn-merah{
+
+    background:#c62828;
+
+}
+
+.btn-reset{
+
+    background:#616161;
+
+}
+
+/* ==========================
+   STATUS PERANGKAT
+========================== */
+
+.kp-monitor{
+
+    margin-top:20px;
+
+    background:#181818;
+
+    border-radius:16px;
+
+    padding:18px;
+
+}
+
+.kp-monitor h2{
+
+    text-align:center;
+
+    color:#ffd700;
+
+    margin-bottom:15px;
+
+}
+
+.monitor-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+
+    gap:10px;
+
+}
+
+.monitor-grid div{
+
+    background:#242424;
+
+    border-radius:12px;
+
+    padding:12px;
+
+    text-align:center;
+
+    font-weight:bold;
+
+}
+
+/* ==========================
+   HP PORTRAIT
+========================== */
+
+@media (max-width:768px){
+
+    .keputusan-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .kp-control{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+/* ==========================
+   TABLET & LAPTOP
+========================== */
+
+@media (min-width:769px){
+
+    .kp-control{
+
+        grid-template-columns:repeat(5,1fr);
+
+    }
+
+}
+
+/* ==========================================
+   KP.CSS V2 FINAL
+   FULLSCREEN + RESPONSIVE PRO
+========================================== */
+
+/* SCROLL */
+
+html{
+
+    width:100%;
+
+    height:100%;
+
+    overflow-x:hidden;
+
+}
+
+body.kp-page{
+
+    width:100%;
+
+    height:100%;
+
+    overflow-x:hidden;
+
+    overflow-y:auto;
+
+    -webkit-user-select:none;
+
+    user-select:none;
+
+    -webkit-touch-callout:none;
+
+}
+
+/* FULLSCREEN */
+
+.kp-page:fullscreen{
+
+    background:#101010;
+
+}
+
+.kp-page:-webkit-full-screen{
+
+    background:#101010;
+
+}
+
+/* ANIMASI */
+
+.score{
+
+    transition:.35s;
+
+}
+
+.score:hover{
+
+    transform:scale(1.05);
+
+}
+
+#timer{
+
+    transition:.35s;
+
+}
+
+/* STATUS WARNA */
+
+.online{
+
+    background:#15803d !important;
+
+    color:#fff;
+
+}
+
+.offline{
+
+    background:#7f1d1d !important;
+
+    color:#fff;
+
+}
+
+/* TV / PROYEKTOR */
+
+@media screen and (min-width:1600px){
+
+    .kp-header{
+
+        padding:22px;
+
+    }
+
+    .event-info h1{
+
+        font-size:42px;
+
+    }
+
+    .event-detail{
+
+        font-size:24px;
+
+    }
+
+    .corner h2{
+
+        font-size:30px;
+
+    }
+
+    .corner p{
+
+        font-size:22px;
+
+    }
+
+    .score{
+
+        font-size:140px;
+
+    }
+
+    #timer{
+
+        font-size:150px;
+
+    }
+
+    .kp-control button{
+
+        font-size:24px;
+
+        padding:22px;
+
+    }
+
+    .keputusan-grid button{
+
+        font-size:22px;
+
+        padding:22px;
+
+    }
+
+}
+
+/* TABLET LANDSCAPE */
+
+@media screen and (min-width:900px) and (max-width:1400px){
+
+    .score{
+
+        font-size:90px;
+
+    }
+
+    #timer{
+
+        font-size:90px;
+
+    }
+
+}
+
+/* HP LANDSCAPE */
+
+@media screen and (max-height:500px) and (orientation:landscape){
+
+    .kp-header{
+
+        padding:8px;
+
+    }
+
+    .event-info h1{
+
+        font-size:20px;
+
+    }
+
+    .event-detail{
+
+        font-size:14px;
+
+    }
+
+    .timer-box{
+
+        min-height:140px;
+
+    }
+
+    #timer{
+
+        font-size:64px;
+
+    }
+
+    .score{
+
+        font-size:58px;
+
+    }
+
+    .kp-control{
+
+        grid-template-columns:repeat(5,1fr);
+
+    }
+
+    .kp-control button{
+
+        padding:10px;
+
+        font-size:14px;
+
+    }
+
+    .keputusan-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+/* CETAK */
+
+@media print{
+
+    .kp-control,
+
+    .kp-monitor,
+
+    .kp-keputusan{
+
+        display:none;
+
+    }
+
+}
+
+/*==================================================
+ ATSC PRO v3.1
+ KP.CSS V3
+ BAGIAN A
+ Layout Professional
+==================================================*/
+
+/*==========================
+ ROOT
+==========================*/
+
+html,
+body{
+
+    margin:0;
+    padding:0;
+
+    width:100%;
+    height:100%;
+
+    background:#111;
+
+    font-family:Arial,Helvetica,sans-serif;
+
+    overflow-x:hidden;
+    overflow-y:auto;
+
+}
+
+/*==========================
+ CONTAINER
+==========================*/
+
+.kp-container{
+
+    width:min(98vw,1800px);
+
+    margin:auto;
+
+    padding:14px;
+
+    box-sizing:border-box;
+
+}
+
+/*==========================
+ HEADER
+==========================*/
+
+.kp-header{
+
+    display:grid;
+
+    grid-template-columns:1fr 160px;
+
+    gap:15px;
+
+    align-items:center;
+
+    background:#1b1b1b;
+
+    border-radius:18px;
+
+    padding:18px;
+
+    margin-bottom:18px;
+
+}
+
+.event-info h1{
+
+    margin:0;
+
+    color:#FFD400;
+
+    font-size:clamp(28px,4vw,46px);
+
+    font-weight:800;
+
+}
+
+.event-detail{
+
+    margin-top:10px;
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:18px;
+
+    font-size:clamp(15px,2vw,22px);
+
+    color:#f2f2f2;
+
+}
+
+.status-box{
+
+    background:#990000;
+
+    border-radius:18px;
+
+    text-align:center;
+
+    padding:15px;
+
+}
+
+.status-box div:first-child{
+
+    font-size:20px;
+
+}
+
+.status-box #ronde{
+
+    font-size:64px;
+
+    font-weight:bold;
+
+    line-height:1;
+
+}
+
+.status-box small{
+
+    display:block;
+
+    margin-top:8px;
+
+    font-size:18px;
+
+}
+
+/*==========================
+ ARENA
+==========================*/
+
+.arena{
+
+    display:grid;
+
+    grid-template-columns:1fr 340px 1fr;
+
+    gap:18px;
+
+    align-items:stretch;
+
+}
+
+/*==========================
+ TIMER
+==========================*/
+
+.timer-box{
+
+    background:#0e0e0e;
+
+    border:5px solid gold;
+
+    border-radius:22px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-height:280px;
+
+    box-shadow:0 0 25px rgba(255,215,0,.35);
+
+}
+
+#timer{
+
+    font-size:clamp(70px,8vw,150px);
+
+    color:#00ff55;
+
+    font-weight:bold;
+
+}
+
+/*==========================
+ PANEL PESILAT
+==========================*/
+
+.corner{
+
+    border-radius:22px;
+
+    text-align:center;
+
+    padding:20px;
+
+    color:white;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
+.kuning{
+
+    background:linear-gradient(#FFD400,#B8860B);
+
+}
+
+.biru{
+
+    background:linear-gradient(#2C8DFF,#114C9C);
+
+}
+
+.corner h2{
+
+    margin:0;
+
+    font-size:clamp(26px,3vw,40px);
+
+}
+
+.corner p{
+
+    margin:12px 0;
+
+    font-size:clamp(18px,2vw,24px);
+
+}
+
+.score{
+
+    margin-top:18px;
+
+    font-size:clamp(70px,9vw,150px);
+
+    font-weight:bold;
+
+}
+
+/*==========================
+ TABLET
+==========================*/
+
+@media(max-width:1100px){
+
+    .arena{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .timer-box{
+
+        order:-1;
+
+        min-height:180px;
+
+    }
+
+}
+
+/*==========================
+ HP
+==========================*/
+
+@media(max-width:700px){
+
+    .kp-header{
+
+        grid-template-columns:1fr 110px;
+
+    }
+
+    .status-box #ronde{
+
+        font-size:46px;
+
+    }
+
+    .timer-box{
+
+        min-height:150px;
+
+    }
+
+}
+
+/*==================================================
+ KP.CSS V3
+ BAGIAN 2
+ LANDSCAPE OPTIMIZATION
+==================================================*/
+
+/* LANDSCAPE HP */
+@media screen and (orientation: landscape) and (max-height: 600px){
+
+    .kp-container{
+        width:100%;
+        max-width:100%;
+        padding:8px;
+    }
+
+    .kp-header{
+        grid-template-columns:1fr 120px;
+        padding:10px;
+        margin-bottom:10px;
+    }
+
+    .event-info h1{
+        font-size:28px;
+    }
+
+    .event-detail{
+        font-size:16px;
+        gap:10px;
+    }
+
+    /* AREA PERTANDINGAN */
+    .arena{
+        display:grid !important;
+        grid-template-columns:1fr 260px 1fr;
+        gap:10px;
+        align-items:stretch;
+    }
+
+    .timer-box{
+        order:0 !important;
+        min-height:180px;
+    }
+
+    #timer{
+        font-size:72px;
+    }
+
+    .corner{
+        min-height:180px;
+        padding:12px;
+    }
+
+    .corner h2{
+        font-size:24px;
+    }
+
+    .corner p{
+        font-size:16px;
+    }
+
+    .score{
+        font-size:70px;
+        margin-top:10px;
+    }
+
+    /* Tombol */
+    .kp-control{
+        display:grid;
+        grid-template-columns:repeat(5,1fr);
+        gap:8px;
+        margin-top:10px;
+    }
+
+    .kp-control button{
+        padding:10px;
+        font-size:14px;
+    }
+
+    /* Keputusan */
+    .keputusan-grid{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        gap:8px;
+    }
+
+    .keputusan-grid button{
+        padding:12px;
+        font-size:14px;
+    }
+}
+
+/* ===================================================
+   LANDSCAPE MODE HP
+=================================================== */
+
+@media screen and (orientation:landscape) and (max-width:1200px){
+
+body.kp-page{
+
+overflow:hidden;
+
+}
+
+.kp-container{
+
+height:100vh;
+
+overflow-y:auto;
+
+padding:10px;
+
+}
+
+.arena{
+
+display:grid;
+
+grid-template-columns:1fr 330px 1fr;
+
+gap:15px;
+
+align-items:stretch;
+
+margin-top:15px;
+
+}
+
+.corner{
+
+min-height:330px;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+}
+
+.timer-box{
+
+height:330px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+#timer{
+
+font-size:90px;
+
+}
+
+.kp-control{
+
+display:grid;
+
+grid-template-columns:repeat(5,1fr);
+
+gap:10px;
+
+margin-top:15px;
+
+}
+
+.keputusan-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:12px;
+
+}
+
+.monitor-grid{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:10px;
+
+}
+
+}
+
+/*==================================================
+ KP.CSS V3
+ BAGIAN 3
+ DESKTOP • TV • FULLSCREEN
+==================================================*/
+
+/* ==========================
+   LAPTOP
+========================== */
+
+@media screen and (min-width:1201px){
+
+.kp-container{
+
+max-width:1900px;
+
+height:100vh;
+
+padding:18px;
+
+box-sizing:border-box;
+
+display:flex;
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+.kp-header{
+
+margin-bottom:0;
+
+}
+
+.arena{
+
+display:grid;
+
+grid-template-columns:1fr 420px 1fr;
+
+gap:18px;
+
+flex-shrink:0;
+
+}
+
+.corner{
+
+min-height:360px;
+
+}
+
+.timer-box{
+
+min-height:360px;
+
+}
+
+#timer{
+
+font-size:110px;
+
+}
+
+.score{
+
+font-size:130px;
+
+}
+
+.kp-control{
+
+display:grid;
+
+grid-template-columns:repeat(5,1fr);
+
+gap:12px;
+
+}
+
+.kp-control button{
+
+height:70px;
+
+font-size:20px;
+
+}
+
+.kp-keputusan{
+
+margin-top:5px;
+
+}
+
+.keputusan-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:12px;
+
+}
+
+.keputusan-grid button{
+
+height:65px;
+
+font-size:20px;
+
+}
+
+.kp-monitor{
+
+margin-top:5px;
+
+}
+
+.monitor-grid{
+
+display:grid;
+
+grid-template-columns:repeat(6,1fr);
+
+gap:10px;
+
+}
+
+}
+
+/* ==========================
+   TV / LED
+========================== */
+
+@media screen and (min-width:1800px){
+
+.event-info h1{
+
+font-size:54px;
+
+}
+
+.event-detail{
+
+font-size:28px;
+
+}
+
+.status-box{
+
+width:220px;
+
+}
+
+.status-box #ronde{
+
+font-size:90px;
+
+}
+
+.corner{
+
+min-height:430px;
+
+}
+
+.score{
+
+font-size:170px;
+
+}
+
+#timer{
+
+font-size:150px;
+
+}
+
+.kp-control button{
+
+font-size:24px;
+
+height:85px;
+
+}
+
+.keputusan-grid button{
+
+font-size:22px;
+
+height:80px;
+
+}
+
+.monitor-grid div{
+
+font-size:22px;
+
+padding:18px;
+
+}
+
+}
+
+/* ==========================
+   FULLSCREEN
+========================== */
+
+:fullscreen .kp-container{
+
+width:100vw;
+
+height:100vh;
+
+max-width:none;
+
+padding:15px;
+
+}
+
+:-webkit-full-screen .kp-container{
+
+width:100vw;
+
+height:100vh;
+
+max-width:none;
+
+padding:15px;
+
+}
+
+/* ==========================
+   ANIMASI
+========================== */
+
+.score{
+
+transition:.25s ease;
+
+}
+
+.score:hover{
+
+transform:scale(1.05);
+
+}
+
+#timer{
+
+transition:.25s ease;
+
+text-shadow:0 0 25px #00ff66;
+
+}
+
+button{
+
+transition:.2s ease;
+
+}
+
+button:hover{
+
+transform:translateY(-2px);
+
+}
+
+/*=========================================
+POPUP HASIL KP
+=========================================*/
+
+.kp-popup{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.85);
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:99999;
+
+}
+
+.kp-popup-box{
+
+    width:520px;
+
+    max-width:95%;
+
+    background:#202020;
+
+    border:5px solid gold;
+
+    border-radius:16px;
+
+    padding:35px;
+
+    text-align:center;
+
+    box-shadow:0 0 40px #000;
+
+}
+
+.kp-popup-title{
+
+    font-size:42px;
+
+    color:#ffd400;
+
+    font-weight:bold;
+
+}
+
+.kp-popup-name{
+
+    margin-top:20px;
+
+    font-size:60px;
+
+    font-weight:bold;
+
+}
+
+.kp-popup-method{
+
+    margin-top:20px;
+
+    font-size:30px;
+
+    color:#ffffff;
+
+}
+
+.kp-popup button{
+
+    margin-top:30px;
+
+    padding:15px 40px;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+}

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ATSC PRO - Ketua Pertandingan</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/kp.css">
+
+</head>
+
+<body class="kp-page">
+
+<div class="kp-container">
+
+    <!-- ================= HEADER ================= -->
+
+    <div class="kp-header">
+
+        <div class="event-info">
+
+            <h1 id="judulKejuaraan">
+
+                ATSC PRO DIGITAL SCORING
+
+            </h1>
+
+            <div class="event-detail">
+
+                <span>
+                    Partai :
+                    <b id="nomorPartai">-</b>
+                </span>
+
+                <span>
+                    Kelas :
+                    <b id="kelasPartai">-</b>
+                </span>
+
+                <span>
+                    Gelanggang :
+                    <b id="gelanggang">1</b>
+                </span>
+
+            </div>
+
+        </div>
+
+        <div class="status-box">
+
+            <div>RONDE</div>
+
+            <div id="ronde">
+
+                1
+
+            </div>
+
+            <small id="statusPertandingan">
+
+                SIAP
+
+            </small>
+
+        </div>
+
+    </div>
+
+    <!-- ================= ARENA ================= -->
+
+    <div class="arena">
+
+        <!-- SUDUT KUNING -->
+
+        <div class="corner kuning">
+
+            <h2 id="namaKuning">
+
+                SUDUT KUNING
+
+            </h2>
+
+            <p id="kontingenKuning">
+
+                -
+
+            </p>
+
+            <div id="scoreKuning" class="score">
+
+                0
+
+            </div>
+
+        </div>
+
+        <!-- TIMER -->
+
+        <div class="timer-box">
+
+            <div id="timer">
+
+                02:00
+
+            </div>
+
+        </div>
+
+        <!-- SUDUT BIRU -->
+
+        <div class="corner biru">
+
+            <h2 id="namaBiru">
+
+                SUDUT BIRU
+
+            </h2>
+
+            <p id="kontingenBiru">
+
+                -
+
+            </p>
+
+            <div id="scoreBiru" class="score">
+
+                0
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ================= KONTROL ================= -->
+
+    <div class="kp-control">
+
+        <button onclick="mulaiTimer()">
+
+            ▶ MULAI
+
+        </button>
+
+        <button onclick="pauseTimer()">
+
+            ⏸ PAUSE
+
+        </button>
+
+        <button onclick="stopTimer()">
+
+            ■ STOP
+
+        </button>
+
+        <button onclick="pindahRonde()">
+➜ RONDE BERIKUT
+</button>
+
+    </div>
+
+      <!-- ================= KEPUTUSAN PERTANDINGAN ================= -->
+
+    <div class="kp-keputusan">
+
+        <h2>KEPUTUSAN PERTANDINGAN</h2>
+
+        <div class="keputusan-grid">
+
+            <button onclick="menangAngka('kuning')" class="btn-kuning">
+                🟡 MENANG ANGKA
+            </button>
+
+            <button onclick="menangAngka('biru')" class="btn-biru">
+                🔵 MENANG ANGKA
+            </button>
+
+            <button onclick="menangTeknik('kuning')" class="btn-kuning">
+                🟡 MENANG TEKNIK
+            </button>
+
+            <button onclick="menangTeknik('biru')" class="btn-biru">
+                🔵 MENANG TEKNIK
+            </button>
+
+            <button onclick="menangWMP('kuning')" class="btn-kuning">
+                🟡 WMP
+            </button>
+
+            <button onclick="menangWMP('biru')" class="btn-biru">
+                🔵 WMP
+            </button>
+
+            <button onclick="walkOver('kuning')" class="btn-kuning">
+                🟡 WO
+            </button>
+
+            <button onclick="walkOver('biru')" class="btn-biru">
+                🔵 WO
+            </button>
+
+            <button onclick="diskualifikasi()" class="btn-merah">
+                🚫 DISKUALIFIKASI
+            </button>
+
+            <button onclick="resetPertandingan()" class="btn-reset">
+                🔄 RESET PERTANDINGAN
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- ================= STATUS PERANGKAT ================= -->
+
+    <div class="kp-monitor">
+
+        <h2>STATUS PERANGKAT</h2>
+
+        <div class="monitor-grid">
+
+            <div id="kpStatus">KP 🟢 Online</div>
+
+            <div id="pw1Status">PW1 🔴 Offline</div>
+
+            <div id="pw2Status">PW2 🔴 Offline</div>
+
+            <div id="pw3Status">PW3 🔴 Offline</div>
+
+            <div id="pw4Status">PW4 🔴 Offline</div>
+
+            <div id="scoreboardStatus">Scoreboard 🔴 Offline</div>
+
+        </div>
+
+    </div>
+
+</div>
+
+  <!-- ======================================
+POPUP HASIL PERTANDINGAN
+====================================== -->
+
+<div id="kpPopup" class="kp-popup">
+
+    <div class="kp-popup-box">
+
+        <div id="kpPopupTitle" class="kp-popup-title">
+
+            MENANG MUTLAK
+
+        </div>
+
+        <div id="kpPopupNama" class="kp-popup-name">
+
+            KUNING
+
+        </div>
+
+        <div id="kpPopupMetode" class="kp-popup-method">
+
+            MENANG ANGKA
+
+        </div>
+
+        <button onclick="tutupPopupKP()">
+
+            TUTUP
+
+        </button>
+
+    </div>
+
+</div>
+<audio id="alarmSound" preload="auto">
+    <source src="assets/sound/alarm.mp3" type="audio/mpeg">
+</audio>
+<script src="js/database.js"></script>
+<script src="js/kp.js"></script>
+
+</body>
+
+</html>

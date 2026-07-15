@@ -1,0 +1,117 @@
+body{
+
+    margin:0;
+
+    background:#eceff1;
+
+    font-family:Arial,sans-serif;
+
+}
+
+.arsip-container{
+
+    width:98%;
+
+    margin:auto;
+
+    padding:20px;
+
+}
+
+.arsip-header{
+
+    background:#263238;
+
+    color:white;
+
+    padding:20px;
+
+    border-radius:10px;
+
+    text-align:center;
+
+}
+
+.arsip-toolbar{
+
+    margin:20px 0;
+
+    display:flex;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+}
+
+.arsip-toolbar input,
+.arsip-toolbar select,
+.arsip-toolbar button{
+
+    padding:10px;
+
+    font-size:16px;
+
+}
+
+.arsip-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    background:white;
+
+}
+
+.arsip-table th{
+
+    background:#37474f;
+
+    color:white;
+
+    padding:12px;
+
+}
+
+.arsip-table td{
+
+    padding:10px;
+
+    border-bottom:1px solid #ddd;
+
+    text-align:center;
+
+}
+
+.btnDetail{
+
+    background:#1976d2;
+
+    color:white;
+
+    border:none;
+
+    padding:8px 14px;
+
+    border-radius:5px;
+
+    cursor:pointer;
+
+}
+
+.btnPdf{
+
+    background:#d32f2f;
+
+    color:white;
+
+    border:none;
+
+    padding:8px 14px;
+
+    border-radius:5px;
+
+    cursor:pointer;
+
+}

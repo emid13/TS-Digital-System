@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>ATSC PRO Multi Screen</title>
+
+<style>
+
+*{
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+}
+
+body{
+
+background:#111;
+
+height:100vh;
+
+overflow:hidden;
+
+font-family:Arial;
+
+}
+
+.container{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+grid-template-rows:1fr 1fr;
+
+gap:5px;
+
+height:100vh;
+
+padding:5px;
+
+}
+
+.panel{
+
+background:#222;
+
+border:2px solid #444;
+
+overflow:hidden;
+
+position:relative;
+
+}
+
+.title{
+
+position:absolute;
+
+left:0;
+
+top:0;
+
+width:100%;
+
+background:#000;
+
+color:#fff;
+
+padding:5px;
+
+text-align:center;
+
+font-weight:bold;
+
+z-index:10;
+
+}
+
+iframe{
+
+width:100%;
+
+height:100%;
+
+border:none;
+
+padding-top:30px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="panel">
+
+<div class="title">
+KP
+</div>
+
+<iframe src="kp.html"></iframe>
+
+</div>
+
+<div class="panel">
+
+<div class="title">
+SCOREBOARD
+</div>
+
+<iframe src="scoreboard.html"></iframe>
+
+</div>
+
+<div class="panel">
+
+<div class="title">
+PW
+</div>
+
+<iframe src="pw.html"></iframe>
+
+</div>
+
+<div class="panel">
+
+<div class="title">
+SEKRETARIS
+</div>
+
+<iframe src="sekretaris.html"></iframe>
+
+</div>
+
+</div>
+
+</body>
+</html>

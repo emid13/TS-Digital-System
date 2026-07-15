@@ -1,0 +1,321 @@
+ <!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ATSC PRO v3.1 FINAL - SCOREBOARD</title>
+
+<link rel="stylesheet" href="css/scoreboard.css">
+
+</head>
+
+<body>
+
+<div class="scoreboard">
+
+    <!-- ================= HEADER ================= -->
+
+    <div class="header-scoreboard">
+
+        <div class="header-left">
+
+            <img src="assets/logo-ts.png"
+                 class="logo-header"
+                 alt="Tapak Suci">
+
+        </div>
+
+        <div class="header-center">
+
+            <div id="namaKejuaraan" class="nama-kejuaraan">
+      KEJUARAAN TAPAK SUCI
+            </div>
+
+            <div id="tempatKejuaraan" class="tempat-kejuaraan">
+                GOR KEBUN BUNGA
+            </div>
+
+        </div>
+
+        <div class="header-right">
+
+            <div id="ronde" class="ronde">
+
+                RONDE I
+
+            </div>
+
+            <div id="timer" class="timer">
+
+                02:00
+
+            </div>
+
+            <div id="statusPertandingan" class="status">
+
+                SIAP
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ================= PARTAI ================= -->
+
+    <div class="partai-bar">
+
+        <div>
+
+            PARTAI
+
+            <span id="nomorPartai">
+
+                -
+
+            </span>
+
+        </div>
+
+        <div id="gelanggang">
+
+            GELANGGANG -
+
+        </div>
+
+    </div>
+
+    <!-- ================= SCORE ================= -->
+
+    <div class="score-area">
+
+        <!-- KUNING -->
+
+        <div id="panelKuning" class="corner kuning">
+
+            <div class="nama">
+
+                <div id="namaKuning">
+
+                    PESILAT KUNING
+
+                </div>
+
+                <div id="kontingenKuning">
+
+                    KONTINGEN
+
+                </div>
+
+            </div>
+
+            <div id="scoreKuning" class="score">
+
+                0
+
+            </div>
+
+        </div>
+
+        <!-- VS -->
+
+        <div class="vs">
+
+            VS
+
+        </div>
+
+        <!-- BIRU -->
+
+        <div id="panelBiru" class="corner biru">
+
+            <div class="nama">
+
+                <div id="namaBiru">
+
+                    PESILAT BIRU
+
+                </div>
+
+                <div id="kontingenBiru">
+
+                    KONTINGEN
+
+                </div>
+
+            </div>
+
+            <div id="scoreBiru" class="score">
+
+                0
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ================= PEMBANTU WASIT ================= -->
+
+    <div class="pw-area">
+
+        <table class="pw-table">
+
+            <thead>
+
+                <tr>
+
+                    <th></th>
+
+                    <th>PW1</th>
+
+                    <th>PW2</th>
+
+                    <th>PW3</th>
+
+                    <th>PW4</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+
+                    <td class="label-kuning">
+
+                        KUNING
+
+                    </td>
+
+                    <td id="pw1Kuning">0</td>
+
+                    <td id="pw2Kuning">0</td>
+
+                    <td id="pw3Kuning">0</td>
+
+                    <td id="pw4Kuning">0</td>
+
+                </tr>
+
+                <tr>
+
+                    <td class="label-biru">
+
+                        BIRU
+
+                    </td>
+
+                    <td id="pw1Biru">0</td>
+
+                    <td id="pw2Biru">0</td>
+
+                    <td id="pw3Biru">0</td>
+
+                    <td id="pw4Biru">0</td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+
+    <div class="footer-scoreboard">
+
+        <div id="winnerText">
+
+            ATSC Pro Digital Scoring
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= OVERLAY PEMENANG ================= -->
+
+<div id="winnerOverlay" class="winner-overlay">
+
+    <div class="winner-box">
+
+        <div class="winner-title">
+
+            RONDE SELESAI
+
+        </div>
+
+        <div id="winnerNama" class="winner-name">
+
+            KUNING
+
+        </div>
+
+        <div class="winner-score">
+
+            <span id="winnerScoreKuning">
+
+                0
+
+            </span>
+
+            -
+
+            <span id="winnerScoreBiru">
+
+                0
+
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= OVERLAY MENANG MUTLAK ================= -->
+
+<div id="mutlakOverlay" class="mutlak-overlay">
+
+    <div class="mutlak-box">
+
+        <div class="mutlak-title">
+
+            MENANG MUTLAK
+
+        </div>
+
+        <div id="mutlakNama" class="mutlak-nama">
+
+            KUNING
+
+        </div>
+
+        <div class="mutlak-skor">
+
+            210+
+
+        </div>
+
+    </div>
+
+</div>
+
+  <audio id="alarmSound" preload="auto">
+    <source src="assets/sound/alarm.mp3" type="audio/mpeg">
+</audio>
+<script src="js/database.js"></script>
+
+<script src="js/scoreboard.js"></script>
+
+</body>
+
+</html>

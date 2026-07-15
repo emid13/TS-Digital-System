@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width,initial-scale=1.0">
+
+<title>ATSC PRO v3.1 - Pembantu Wasit</title>
+
+<link rel="stylesheet"
+href="css/style.css">
+
+<link rel="stylesheet"
+href="css/pw.css">
+
+</head>
+
+<body class="pw-page">
+
+<div class="pw-container">
+
+<!-- ================= HEADER ================= -->
+
+<div class="pw-header">
+
+<div class="pw-left">
+
+<h1 id="pwTitle">
+
+PEMBANTU WASIT 
+
+</h1>
+
+<div class="pw-info">
+
+<span>
+Partai :
+<b id="nomorPartai">-</b>
+</span>
+
+<span>
+Ronde :
+<b id="ronde">1</b>
+</span>
+
+<span>
+Gelanggang :
+<b id="gelanggang">1</b>
+</span>
+
+</div>
+
+</div>
+
+<div class="pw-center">
+
+<div id="timer">
+
+02:00
+
+</div>
+
+<div id="statusPertandingan">
+
+SIAP
+
+</div>
+
+</div>
+
+<div class="pw-right">
+
+<div id="statusPW">
+
+🟢 ONLINE
+
+</div>
+
+<div id="namaKejuaraan">
+
+ATSC PRO DIGITAL SCORING
+
+</div>
+
+</div>
+
+</div>
+
+  <!-- =====================================================
+     ARENA PERTANDINGAN
+====================================================== -->
+
+<div class="pw-arena">
+
+    <!-- ================= SUDUT KUNING ================= -->
+
+    <div class="pw-corner kuning">
+
+        <div class="corner-title">
+
+            SUDUT KUNING
+
+        </div>
+
+        <div class="nama-pesilat"
+             id="namaKuning">
+
+            -
+
+        </div>
+
+        <div class="kontingen"
+             id="kontingenKuning">
+
+            -
+
+        </div>
+
+        <div class="score-box">
+
+            <div class="score-label">
+
+                NILAI RONDE
+
+            </div>
+
+            <div class="score"
+                 id="scoreKuning">
+
+                0
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ================= TENGAH ================= -->
+
+    <div class="pw-middle">
+
+        <div class="match-info">
+
+            <div>
+
+                <strong>KELAS</strong>
+
+                <br>
+
+                <span id="kelasPartai">
+
+                    -
+
+                </span>
+
+            </div>
+
+            <div>
+
+                <strong>PARTAI</strong>
+
+                <br>
+
+                <span id="partaiKe">
+
+                    -
+
+                </span>
+
+            </div>
+
+            <div>
+
+                <strong>STATUS</strong>
+
+                <br>
+
+                <span id="statusMatch">
+
+                    MENUNGGU
+
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ================= SUDUT BIRU ================= -->
+
+    <div class="pw-corner biru">
+
+        <div class="corner-title">
+
+             SUDUT BIRU
+
+        </div>
+
+        <div class="nama-pesilat"
+             id="namaBiru">
+
+            -
+
+        </div>
+
+        <div class="kontingen"
+             id="kontingenBiru">
+
+            -
+
+        </div>
+
+        <div class="score-box">
+
+            <div class="score-label">
+
+                NILAI RONDE
+
+            </div>
+
+            <div class="score"
+                 id="scoreBiru">
+
+                0
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+  <!-- =====================================================
+     PANEL PENILAIAN
+====================================================== -->
+
+<div class="pw-scoring">
+
+    <!-- ================= KUNING ================= -->
+
+    <div class="score-panel">
+
+        <h2 class="title-kuning">
+
+             PENILAIAN KUNING
+
+        </h2>
+
+        <div class="score-grid">
+
+            <button class="btn-kuning"
+onclick="inputNilai('kuning','katak',20)">
+🥊 KATAK
+<br>
++20
+</button>
+
+            <button class="btn-kuning"
+onclick="inputNilai('kuning','harimau',30)">
+🦵 HARIMAU
+<br>
++30
+</button>
+
+            <button class="btn-kuning"
+onclick="inputNilai('kuning','terkaman',40)">
+🤼 TERKAMAN
+<br>
++40
+</button>
+
+            <button class="btn-kuning"
+onclick="inputNilai('kuning','mawarKatak',30)">
+🌸 MAWAR + KATAK
+<br>
++30
+</button>
+
+            <button class="btn-kuning"
+onclick="inputNilai('kuning','mawarHarimau',40)">
+🌸 MAWAR + HARIMAU
+<br>
++40
+</button>
+
+            <button class="btn-kuning"
+onclick="inputNilai('kuning','mawarTerkaman',50)">
+🌸 MAWAR + TERKAMAN
+<br>
++50
+</button>
+
+        </div>
+
+    </div>
+
+    <!-- ================= BIRU ================= -->
+
+    <div class="score-panel">
+
+        <h2 class="title-biru">
+
+             PENILAIAN BIRU
+
+        </h2>
+
+        <div class="score-grid">
+
+            <button class="btn-biru"
+onclick="inputNilai('biru','katak',20)">
+🥊 KATAK
+<br>
++20
+</button>
+
+            <button class="btn-biru"
+onclick="inputNilai('biru','harimau',30)">
+🦵 HARIMAU
+<br>
++30
+</button>
+
+            <button class="btn-biru"
+onclick="inputNilai('biru','terkaman',40)">
+🤼 TERKAMAN
+<br>
++40
+</button>
+
+            <button class="btn-biru"
+onclick="inputNilai('biru','mawarKatak',30)">
+🌸 MAWAR + KATAK
+<br>
++30
+</button>
+
+            <button class="btn-biru"
+onclick="inputNilai('biru','mawarHarimau',40)">
+🌸 MAWAR + HARIMAU
+<br>
++40
+</button>
+
+            <button class="btn-biru"
+onclick="inputNilai('biru','mawarTerkaman',50)">
+🌸 MAWAR + TERKAMAN
+<br>
++50
+</button>
+
+        </div>
+
+    </div>
+
+</div>
+
+  <!-- =====================================================
+     PANEL HUKUMAN
+====================================================== -->
+
+<div class="pw-penalty">
+
+    <!-- ================= HUKUMAN KUNING ================= -->
+
+    <div class="penalty-panel">
+
+        <h2 class="title-kuning">
+
+             HUKUMAN KUNING
+
+        </h2>
+
+        <div class="penalty-grid">
+
+            <button class="btn-hukuman"
+                onclick="inputHukuman('kuning','teguran1',10)">
+                Teguran I
+                <br>
+                -10
+            </button>
+
+            <button class="btn-hukuman"
+                onclick="inputHukuman('kuning','teguran2',20)">
+                Teguran II
+                <br>
+                -20
+            </button>
+
+            <button class="btn-hukuman"
+                onclick="inputHukuman('kuning','peringatan1',30)">
+                Peringatan I
+                <br>
+                -30
+            </button>
+
+            <button class="btn-hukuman"
+                onclick="inputHukuman('kuning','peringatan2',40)">
+                Peringatan II
+                <br>
+                -40
+            </button>
+
+            <button class="btn-diskualifikasi"
+                onclick="inputHukuman('kuning','diskualifikasi',50)">
+                DISKUALIFIKASI
+                <br>
+                -50
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- ================= HUKUMAN BIRU ================= -->
+
+    <div class="penalty-panel">
+
+        <h2 class="title-biru">
+
+             HUKUMAN BIRU
+
+        </h2>
+
+        <div class="penalty-grid">
+
+            <button class="btn-hukuman"
+                onclick="inputHukuman('biru','teguran1',10)">
+                Teguran I
+                <br>
+                -10
+            </button>
+
+            <button class="btn-hukuman"
+                onclick="inputHukuman('biru','teguran2',20)">
+                Teguran II
+                <br>
+                -20
+            </button>
+
+            <button class="btn-hukuman"
+                onclick="inputHukuman('biru','peringatan1',30)">
+                Peringatan I
+                <br>
+                -30
+            </button>
+
+            <button class="btn-hukuman"
+                onclick="inputHukuman('biru','peringatan2',40)">
+                Peringatan II
+                <br>
+                -40
+            </button>
+
+            <button class="btn-diskualifikasi"
+                onclick="inputHukuman('biru','diskualifikasi',50)">
+                DISKUALIFIKASI
+                <br>
+                -50
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+  <!-- =====================================================
+     RIWAYAT INPUT RONDE
+====================================================== -->
+
+<div class="pw-history">
+
+    <div class="history-header">
+
+        <h2>
+            📋 RIWAYAT INPUT RONDE
+        </h2>
+
+        <div class="history-action">
+
+            <button class="btn-undo"
+                onclick="hapusInputTerakhir()">
+
+                ↩ Hapus Terakhir
+
+            </button>
+
+            <button class="btn-clear"
+                onclick="bersihkanRiwayat()">
+
+                🗑 Bersihkan
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <div id="historyList" class="history-list">
+
+        <div class="history-empty">
+
+            Belum ada input penilaian pada ronde ini.
+
+        </div>
+
+    </div>
+
+</div>
+
+  <!-- =====================================================
+     SCRIPT
+====================================================== -->
+
+</div>
+<!-- END .pw-container -->
+
+  <audio id="alarmSound" preload="auto">
+    <source src="assets/sound/alarm.mp3" type="audio/mpeg">
+</audio>
+
+<script src="js/database.js"></script>
+
+<script src="js/pw.js"></script>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    // Tandai PW online
+    if (typeof initPW === "function") {
+        initPW();
+    }
+
+    // Muat partai aktif
+    if (typeof loadPartaiAktif === "function") {
+        loadPartaiAktif();
+    }
+
+    // Muat data ronde aktif
+    if (typeof loadRondeAktif === "function") {
+        loadRondeAktif();
+    }
+
+    // Tampilkan riwayat ronde
+    if (typeof loadHistory === "function") {
+        loadHistory();
+    }
+
+    // Sinkronisasi otomatis
+    if (typeof startAutoSync === "function") {
+        startAutoSync();
+    }
+
+});
+
+</script>
+
+</body>
+
+</html>

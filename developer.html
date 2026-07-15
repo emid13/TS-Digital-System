@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>ATSC PRO Developer Monitor</title>
+
+<link rel="stylesheet" href="css/developer.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>ATSC PRO</h1>
+
+<h2>Developer Monitor</h2>
+
+<!-- STATUS DEVICE -->
+
+<div class="card">
+
+<h3>Status Perangkat</h3>
+
+<table>
+
+<tr>
+
+<td>KP</td>
+
+<td id="kpStatus">OFFLINE</td>
+
+</tr>
+
+<tr>
+
+<td>Sekretaris</td>
+
+<td id="sekStatus">OFFLINE</td>
+
+</tr>
+
+<tr>
+
+<td>Scoreboard</td>
+
+<td id="tvStatus">OFFLINE</td>
+
+</tr>
+
+<tr>
+
+<td>PW1</td>
+
+<td id="pw1Status">OFFLINE</td>
+
+</tr>
+
+<tr>
+
+<td>PW2</td>
+
+<td id="pw2Status">OFFLINE</td>
+
+</tr>
+
+<tr>
+
+<td>PW3</td>
+
+<td id="pw3Status">OFFLINE</td>
+
+</tr>
+
+<tr>
+
+<td>PW4</td>
+
+<td id="pw4Status">OFFLINE</td>
+
+</tr>
+
+</table>
+
+</div>
+
+<!-- PERTANDINGAN -->
+
+<div class="card">
+
+<h3>Pertandingan</h3>
+
+<p>Nomor Partai :
+<b id="partaiNomor">-</b></p>
+
+<p>Ronde :
+<b id="ronde">-</b></p>
+
+<p>Status :
+<b id="status">-</b></p>
+
+<p>Timer :
+<b id="timer">00:00</b></p>
+
+</div>
+
+<!-- NILAI -->
+
+<div class="card">
+
+<h3>Nilai</h3>
+
+<p>Kuning :
+<b id="nilaiKuning">0</b></p>
+
+<p>Biru :
+<b id="nilaiBiru">0</b></p>
+
+</div>
+
+<!-- POPUP -->
+
+<div class="card">
+
+<h3>Popup Global</h3>
+
+<p id="popupJudul">-</p>
+
+<p id="popupPemenang">-</p>
+
+<p id="popupNilai">-</p>
+
+</div>
+
+<!-- TOMBOL CEPAT -->
+
+<div class="card">
+
+<h3>Shortcut</h3>
+
+<button onclick="location.href='index.html'">Dashboard</button>
+
+<button onclick="location.href='sekretaris.html'">Sekretaris</button>
+
+<button onclick="location.href='kp.html'">KP</button>
+
+<button onclick="location.href='pw.html'">PW</button>
+
+<button onclick="location.href='scoreboard.html'">Scoreboard</button>
+
+<button onclick="location.href='arsip.html'">Arsip</button>
+
+</div>
+
+<!-- LOG -->
+
+<div class="card">
+
+<h3>Live Database</h3>
+
+<pre id="dbLog"></pre>
+
+</div>
+
+</div>
+
+<script src="js/database.js"></script>
+
+<script src="js/developer.js"></script>
+
+</body>
+</html>

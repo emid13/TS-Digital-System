@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATSC PRO - Sekretaris</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<!-- HEADER -->
+
+<div class="top-header">
+
+    <div class="header-left">
+
+        <img src="assets/logo.png" alt="Logo">
+
+        <div>
+
+            <div class="header-title">
+                ATSC PRO
+            </div>
+
+            <div class="header-sub">
+                Professional Digital Scoring
+            </div>
+
+        </div>
+
+    </div>
+
+    <div>
+
+        <span class="icon-btn">🔔</span>
+        <span class="icon-btn">⚙️</span>
+
+    </div>
+
+</div>
+
+<!-- BANNER -->
+
+<div class="banner">
+
+    <h2>Selamat Datang</h2>
+
+    <h3>DI KEJUARAAN TAPAK SUCI</h3>
+
+    <p>Sekretaris Pertandingan</p>
+
+</div>
+
+<!-- STATISTIK -->
+
+<div class="stats">
+
+    <div class="stat-card">
+        <div class="stat-icon">🥋</div>
+        <div class="stat-value"></div>
+        <div class="stat-label">Pesilat</div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-icon">⚔️</div>
+        <div class="stat-value"></div>
+        <div class="stat-label">Partai</div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-icon">🏟️</div>
+        <div class="stat-value"></div>
+        <div class="stat-label">Gelanggang</div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-icon">🏆</div>
+        <div class="stat-value"></div>
+        <div class="stat-label">Kejuaraan</div>
+    </div>
+
+</div>
+
+<!-- MENU -->
+
+<div class="menu">
+
+    <div class="menu-item" onclick="bukaPesilat()">
+
+        <div class="icon">🥋</div>
+
+        <h3>Data Pesilat</h3>
+
+    </div>
+
+    <div class="menu-item" onclick="bukaKejuaraan()">
+
+        <div class="icon">🏆</div>
+
+        <h3>Kejuaraan</h3>
+
+    </div>
+
+    <div class="menu-item" onclick="bukaPartai()">
+
+        <div class="icon">⚔️</div>
+
+        <h3>Partai</h3>
+
+    </div>
+
+  <div class="menu-item"
+onclick="importExcel()">
+
+    <div class="icon">📥</div>
+
+    <h3>Import Excel</h3>
+
+</div>
+
+    <div class="menu-item" onclick="aktifkanPartai(0)">
+
+    <div class="icon">▶️</div>
+
+    <h3>Aktifkan</h3>
+
+</div>
+
+    <div class="menu-item">
+
+        <div class="icon">📄</div>
+
+        <h3>Laporan</h3>
+
+    </div>
+
+    <div class="menu-item">
+
+        <div class="icon">⚙️</div>
+
+        <h3>Pengaturan</h3>
+
+    </div>
+
+</div>
+
+<!-- BOTTOM NAV -->
+
+<div class="bottom-nav">
+
+    <div>🏠</div>
+
+    <div>📊</div>
+
+    <div>⚔️</div>
+
+    <div>👤</div>
+
+    <div>⚙️</div>
+
+</div>
+
+<!-- ================= POPUP KEJUARAAN ================= -->
+
+<div id="popupKejuaraan" class="popup">
+
+    <div class="popup-content">
+
+        <h2>Data Kejuaraan</h2>
+
+        <input id="namaKejuaraan" type="text" placeholder="Nama Kejuaraan">
+
+        <input id="tempat" type="text" placeholder="Tempat Pelaksanaan">
+
+        <input id="tanggal" type="date">
+
+        <input id="gelanggang" type="number" placeholder="Jumlah Gelanggang">
+
+        <div class="popup-button">
+
+            <button onclick="simpanKejuaraan()">
+                Simpan
+            </button>
+
+            <button onclick="tutupKejuaraan()">
+                Tutup
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+  <button onclick="location.href='arsip.html'">
+    📁 Arsip Pertandingan
+</button>
+
+<!-- ================= POPUP PESILAT ================= -->
+
+<div id="popupPesilat" class="popup">
+
+    <div class="popup-content">
+
+        <h2>Data Pesilat</h2>
+
+        <input id="namaPesilat" type="text" placeholder="Nama Pesilat">
+
+        <select id="sudutPesilat">
+
+            <option value="">Pilih Sudut</option>
+            <option>Biru</option>
+            <option>Kuning</option>
+
+        </select>
+
+        <input id="kontingenPesilat" type="text" placeholder="Kontingen">
+
+        <input id="kelasPesilat" type="text" placeholder="Kelas">
+
+        <select id="jkPesilat">
+
+            <option>Putra</option>
+            <option>Putri</option>
+
+        </select>
+
+        <div class="popup-button">
+
+            <button onclick="simpanPesilat()">
+                Simpan
+            </button>
+
+            <button onclick="tutupPesilat()">
+                Tutup
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= POPUP PARTAI ================= -->
+
+<div id="popupPartai" class="popup">
+
+    <div class="popup-content">
+
+        <h2>Data Partai</h2>
+
+        <input id="nomorPartai" type="number" placeholder="Nomor Partai">
+
+        <input id="gelanggangPartai" type="number" placeholder="Nomor Gelanggang">
+
+        <input id="kelasPartai" type="text" placeholder="Kelas">
+
+        <select id="sudutKuning">
+            <option value="">Pilih Sudut Kuning</option>
+        </select>
+
+        <select id="sudutBiru">
+            <option value="">Pilih Sudut Biru</option>
+        </select>
+
+        <div class="popup-button">
+
+            <button onclick="simpanPartai()">
+                Simpan Partai
+            </button>
+
+            <button onclick="tutupPartai()">
+                Tutup
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+  <input
+type="file"
+id="fileExcel"
+accept=".xlsx,.xls"
+style="display:none"
+onchange="bacaExcel(event)">
+
+  <!-- ================= DATA KEJUARAAN ================= -->
+
+<div class="card-list">
+
+    <h2>Kejuaraan Aktif</h2>
+
+    <div id="listKejuaraan">
+        Belum ada data kejuaraan.
+    </div>
+
+</div>
+
+<!-- ================= DATA PESILAT ================= -->
+
+<div class="card-list">
+
+    <h2>Daftar Pesilat</h2>
+
+    <div id="listPesilat">
+        Belum ada data pesilat.
+    </div>
+
+</div>
+
+<!-- ================= DATA PARTAI ================= -->
+
+<div class="card-list">
+
+    <h2>Daftar Partai</h2>
+
+    <div id="listPartai">
+        Belum ada partai.
+    </div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+<script src="js/database.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></>
+
+</body>
+
+</html>
