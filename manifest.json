@@ -2,9 +2,13 @@
   "name": "ATSC PRO Digital Scoring",
   "short_name": "ATSC PRO",
   "description": "Aplikasi Digital Scoring Tapak Suci",
-  "start_url": "./index.html",
-  "scope": "./",
+  "start_url": "start_url": "./",
+  "scope": "scope": "/TS-Digital-System/",
   "display": "fullscreen",
+  "display_override": [
+  "fullscreen",
+  "standalone"
+],
   "orientation": "any",
   "background_color": "#111111",
   "theme_color": "#7A0000",
