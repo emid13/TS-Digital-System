@@ -4,7 +4,7 @@
   "description": "Aplikasi Digital Scoring Tapak Suci",
   "start_url": "./index.html",
   "scope": "./",
-  "display": "standalone",
+  "display": "fullscreen",
   "orientation": "any",
   "background_color": "#111111",
   "theme_color": "#7A0000",
